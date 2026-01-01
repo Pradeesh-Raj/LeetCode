@@ -32,18 +32,18 @@ class Solution {
 
     public int minDays(int[] bloomDay, int m, int k) {
         int N = bloomDay.length;
+        if(N < m*k) return -1;
         int low = minElement(bloomDay, N);
         int high = maxElement(bloomDay, N);
-        int res = Integer.MAX_VALUE;
+        int res = -1;
         while(low <= high){
             long mid = low + (high-low)/2;
             if(possibleBouquets(bloomDay, m, k, mid, N)){
-                res = Math.min(res, (int)mid);
+                res = (int)mid;
                 high = (int)mid - 1;
             }
             else low = (int)mid + 1;
         }
-        if(res == Integer.MAX_VALUE) return -1;
         return res;
     }
 }
