@@ -17,6 +17,6 @@ class Solution {
             i = j + 1;
             j = i;
         }
-        return str.toString();
+        return new String(str);
     }
 }
