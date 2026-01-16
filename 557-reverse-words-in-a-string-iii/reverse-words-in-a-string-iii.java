@@ -11,7 +11,7 @@ class Solution {
         StringBuilder str = new StringBuilder(s);
         int i = 0, j = 0;
         int N = s.length();
-        while(j <= N){
+        while(i < N - 1){
             while(j < s.length() && s.charAt(j) != ' ') j++;
             reverse(str,i,j-1);
             i = j + 1;
