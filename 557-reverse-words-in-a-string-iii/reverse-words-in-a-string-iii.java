@@ -1,8 +1,4 @@
 class Solution {
-    private static int findSpace(StringBuilder s, int j){
-        while(j < s.length() && s.charAt(j) != ' ') j++;
-        return j;
-    }
     private static void reverse(StringBuilder str, int st, int end){
         while(st < end){
             char temp = str.charAt(st);
@@ -13,12 +9,13 @@ class Solution {
     }
     public String reverseWords(String s) {
         StringBuilder str = new StringBuilder(s);
-        int i = 0, j = findSpace(str,0);
+        int i = 0, j = 0;
         int N = s.length();
         while(j <= N){
+            while(j < s.length() && s.charAt(j) != ' ') j++;
             reverse(str,i,j-1);
             i = j + 1;
-            j = findSpace(str,++j);
+            j = i;
         }
         return str.toString();
     }
