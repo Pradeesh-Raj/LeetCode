@@ -4,10 +4,8 @@ class Solution {
         int maxLen = 0, zeros = 0;
         while(right < N){
             if(nums[right] == 0) zeros++;
-            while(zeros > k){
-                if(nums[left] == 0){
-                    zeros--;
-                }
+            if(zeros > k){
+                if(nums[left] == 0) zeros--;
                 left++;
             }
             if(zeros <= k){
