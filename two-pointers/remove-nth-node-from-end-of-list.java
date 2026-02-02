@@ -9,6 +9,7 @@
  * }
  */
 class Solution {
+    // Naa dha Pradeesh
     private static int length(ListNode head){
         ListNode temp = head;
         int length = 0;
