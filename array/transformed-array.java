@@ -7,7 +7,7 @@ class Solution {
                 result[i] = nums[(i + nums[i]) % N];
             }
             else if(nums[i] < 0){
-                result[i] = nums[(i - (-nums[i]) + N) % N];
+                result[i] = nums[(i + nums[i] % N + N) % N];
             }
             else result[i] = nums[i];
         }
