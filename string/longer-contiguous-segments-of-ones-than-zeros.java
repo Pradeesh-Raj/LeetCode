@@ -14,7 +14,7 @@ class Solution {
                 maxCount0 = Math.max(maxCount0, count0s);
             }
         }
-        if(maxCount0 == maxCount1) return false;
-        return ((maxCount0 > maxCount1) ? false : true);
+        // if(maxCount0 == maxCount1) return false;
+        return ((maxCount0 >= maxCount1) ? false : true);
     }
 }
