@@ -9,7 +9,7 @@ class Solution {
             else {
                 cnt = 1;
             }
-            max = Math.max(max, cnt);
+            max = (cnt > max) ? cnt : max;
         }
         return max;
     }
