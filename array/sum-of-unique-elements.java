@@ -1,16 +1,13 @@
 class Solution {
     public int sumOfUnique(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         int sum = 0;
         for(int i = 0 ; i < nums.length ; i++) {
-            if(set.contains(nums[i])) {
-                sum -= nums[i];
-            }
-            else {
-                sum += nums[i];
-            }
-            set.add(nums[i]);
+            map.put(nums[i], map.getOrDefault(nums[i],0) + 1);
         }
-        return (sum > 0) ? sum : 0;
+        for(Map.Entry<Integer,Integer> mpp : map.entrySet()) {
+            if(mpp.getValue() == 1) sum += mpp.getKey();
+        }
+        return sum;
     }
 }
