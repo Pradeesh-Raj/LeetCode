@@ -4,10 +4,11 @@ class Solution {
         int N = nums.size();
         vector<int> curr = {0};
         for(int i = 0 ; i < N ; i++) {
-            vector<int> newL;
+            vector<int> newL(curr.size() * 2);
+            int si = 0;
             for(int j : curr) {
-                newL.push_back(j + nums[i]);
-                newL.push_back(j - nums[i]);
+                newL[si++] = (j + nums[i]);
+                newL[si++] = (j - nums[i]);
             }
             curr = newL;
         }
